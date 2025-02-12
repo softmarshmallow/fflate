@@ -535,7 +535,7 @@ Like `fflate`, the [Compression Streams API](https://developer.mozilla.org/en-US
 
 However, browsers do not offer any native non-streaming compression API, and `CompressionStream` has surprisingly poor performance on data already loaded into memory; `fflate` tends to be faster even for files that are dozens of megabytes large. Similarly, `fflate` is much faster for files under a megabyte because it avoids marshalling overheads. Even when streaming hundreds of megabytes of data, the native API usually performs between 30% faster and 10% slower than `fflate`. And Compression Streams have many other disadvantages - no ability to control compression level, poor support for older browsers, no ZIP support, etc.
 
-If you'd still prefer to depend upon a native browser API but want to support older browsers, you can use an `fflate`-based [Compression Streams ponyfill](https://github.com/101arrowz/compression-streams-polyfill).
+If you'd still prefer to depend upon a native browser API but want to support older browsers, you can use an `fflate`-based [Compression Streams polyfill](https://github.com/101arrowz/compression-streams-polyfill).
 
 ## Browser support
 `fflate` makes heavy use of typed arrays (`Uint8Array`, `Uint16Array`, etc.). Typed arrays can be polyfilled at the cost of performance, but the most recent browser that doesn't support them [is from 2011](https://caniuse.com/typedarrays), so I wouldn't bother.
